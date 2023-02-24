@@ -1,0 +1,30 @@
+<launch>
+
+  <group ns="$(arg veh)">  
+
+    <!--<node pkg="my_package" type="my_publisher_node.py" 
+    name="my_publisher_node_1" output="screen"/>
+    <node pkg="my_package" type="my_publisher_node.py" 
+    name="my_publisher_node_2" output="screen"/>
+
+    <node pkg="my_package" type="my_subscriber_node.py" 
+    name="my_subscriber_node_1"  output="screen">
+        <remap from="~/chatter" to="my_publisher_node_1/chatter"/>
+    </node>-->
+
+    <!--<node pkg="my_package" type="my_subscriber_node.py" 
+    name="my_subscriber_node_2"  output="screen">
+        <remap from="~/chatter" to="my_publisher_node_2/chatter"/>
+    </node>-->
+    <node pkg="my_package" type="backoff_tof.py" 
+          name="backoff_tof"  output="screen">
+        <remap from="~/chatter" to="front_center_tof_driver_node/range"/>
+        <remap from="~/endpoint" to="joy"/>
+    </node>
+    <node pkg="my_package" type="joy_subscriber.py" 
+    name="joy_subscriber_1"  output="screen">
+      <remap from="~/chatter" to="joy"/>
+    </node>-->
+  </group>
+
+</launch>

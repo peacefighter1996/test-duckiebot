@@ -1,0 +1,1 @@
+docker -H tuduck4.local run -e VEHICLE_NAME=tuduck4 -v /var/run/avahi-deamon/socket:/var/run/avahi-deamon/socket -v /data:/data --network host -d duckietown/cuddly-chainsaw:v2-arm64v8 
