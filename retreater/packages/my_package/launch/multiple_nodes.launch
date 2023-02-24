@@ -18,12 +18,12 @@
     </node>-->
     <node pkg="my_package" type="backoff_tof.py" 
           name="backoff_tof"  output="screen">
-        <remap from="~/chatter" to="front_center_tof_driver_node/range"/>
-        <remap from="~/endpoint" to="joy"/>
+        <remap from="~/sub_endpoint" to="front_center_tof_driver_node/range"/>
+        <remap from="~/pub_endpoint" to="joy"/>
     </node>
     <node pkg="my_package" type="joy_subscriber.py" 
     name="joy_subscriber_1"  output="screen">
-      <remap from="~/chatter" to="joy"/>
+      <remap from="~/sub_endpoint" to="joy"/>
     </node>-->
   </group>
 

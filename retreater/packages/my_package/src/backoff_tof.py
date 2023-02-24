@@ -20,8 +20,8 @@ class BackoffTof(DTROS):
         # initialize the DTROS parent class
         super(BackoffTof, self).__init__(node_name=node_name, node_type=NodeType.GENERIC)
         # construct publisher
-        self.sub = rospy.Subscriber('~chatter', Range, self.callback)
-        self.pub = rospy.Publisher('~endpoint',Joy)
+        self.sub = rospy.Subscriber('~sub_endpoint', Range, self.callback)
+        self.pub = rospy.Publisher('~pub_endpoint',Joy)
         self.record_start:datetime = datetime.now()
         self.recording = False
         self.drive = False

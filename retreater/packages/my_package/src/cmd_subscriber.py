@@ -7,19 +7,19 @@ from duckietown.dtros import DTROS, NodeType
 from std_msgs.msg import String
 from duckietown_msgs.msg import WheelsCmdStamped
 
-class BackoffTof(DTROS):
+class MyNode(DTROS):
 
     def __init__(self, node_name):
         # initialize the DTROS parent class
-        super(BackoffTof, self).__init__(node_name=node_name, node_type=NodeType.GENERIC)
+        super(MyNode, self).__init__(node_name=node_name, node_type=NodeType.GENERIC)
         # construct publisher
-        self.sub = rospy.Subscriber('~chatter', WheelsCmdStamped, self.callback, queue_size=2)
+        self.sub = rospy.Subscriber('~sub_endpoint', WheelsCmdStamped, self.callback, queue_size=2)
 
     def callback(self, data):
         rospy.loginfo("I heard %s", data)
 
 if __name__ == '__main__':
     # create the node
-    node = BackoffTof(node_name='my_subscriber_node')
+    node = MyNode(node_name='my_subscriber_node')
     # keep spinning
     rospy.spin()
