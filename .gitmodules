@@ -1,0 +1,6 @@
+[submodule "duckiebot-example-retreater"]
+	path = projects/retreater
+	url = git@github.com:peacefighter1996/duckiebot-example-retreater.git
+[submodule "duckiebot-ros-communication-example"]
+	path = projects/ros-com-example
+	url = git@github.com:peacefighter1996/duckiebot-ros-communication-example.git
