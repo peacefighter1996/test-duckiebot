@@ -1,0 +1,3 @@
+[submodule "duckiebot-example-retreater"]
+	path = duckiebot-example-retreater
+	url = git@github.com:peacefighter1996/duckiebot-example-retreater.git
